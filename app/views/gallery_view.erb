@@ -1,0 +1,35 @@
+<div class="container">
+  <h2><%= Gallery.find(@gallery_id).name %></h2>
+  <% if Gallery.find(@gallery_id).user.id == session[:current_user_id] %>
+  <form name="uploader" action="/upload" method="post" enctype="multipart/form-data">
+  <input type="file" name="myfile">
+  <input type="hidden" name="gallery_id" value=<%=@gallery_id%> >
+  <input type="submit" name="submit" value="upload">
+  </form><br>
+  <% end %>
+  <div class="photoz">
+  <% if @photos %>
+  <% @photos.each do |x| %>
+    <a href= '/galleries/<%=@gallery_id.to_s+"/"+x.id.to_s%>' ><img src=<%= x.file.thumb.url %> ></a>
+  <% end %>
+  <% end %>
+  </div>
+</div>
+// <script type="text/javascript">
+//   $(document).ready(function(){
+//     $("form").on("submit",function(e){
+//       //e.preventDefault();
+//       console.log("yo");
+//       $.ajax({
+//         type: "POST",
+//         url: "/upload",
+//         contentType : 'multipart/form-data',
+//         data: $(this).serialize(),
+//       }).done(function(x){
+//         $("#photoz").replaceWith("hi");
+//       });
+//     });
+//   });
+
+
+</script>

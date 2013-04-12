@@ -1,0 +1,6 @@
+<div class="container">
+  <h2><%= User.find(@user_id).name %>'s Albums</h2>
+  <% User.find(@user_id).galleries.each do |x| %>
+    <p><a href='/galleries/<%=x.id%>'><%=x.name%></a></p>
+  <% end %>
+</div>

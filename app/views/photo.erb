@@ -1,0 +1,8 @@
+<div class="container">
+  <h3>Photo <%= @photo_id %> from 
+    <a href='/galleries/<%= Photo.find(@photo_id).gallery.id%>'><%= Photo.find(@photo_id).gallery.name %></a>
+    by <a href='/user/<%= Photo.find(@photo_id).gallery.user.id%>/galleries'>
+    <%= Photo.find(@photo_id).gallery.user.name%></a>
+  </h3>
+  <img src="<%=Photo.find(@photo_id).file.url %>">
+</div>

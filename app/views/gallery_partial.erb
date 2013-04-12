@@ -1,0 +1,3 @@
+  <% @photos.each do |x| %>
+    <a href= '/galleries/<%=@gallery_id.to_s+"/"+x.id.to_s%>' ><img src=<%= x.file.thumb.url %> ></a>
+  <% end %>

@@ -1,0 +1,27 @@
+.container {
+  margin: 20px auto;
+  width: 700px;
+  padding: 0px 20px 20px 20px;
+  border: 1px solid black;
+  text-align: center;
+    background-color: lightgrey;
+}
+th {
+  text-align: left;
+}
+
+.nav_bar {
+  background-color: grey;
+  border-bottom: 1px solid black;
+}
+
+.nav_bar ul {
+  list-style-type: none;
+  margin: auto;
+  padding-bottom: 40px;
+}
+.nav_bar ul li {
+  float: left;
+  padding: 10px;
+
+}

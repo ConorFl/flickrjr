@@ -1,0 +1,9 @@
+<div class="container">
+  <h1><center>Welcome to Flickr Jr. <%= User.find_by_id(session[:current_user_id]).name if session[:current_user_id] %></center></h1>
+</div>
+<div class="container">
+  <h2>Recent Photos</h2>
+  <% Photo.all.each do |x| %>
+    <a href='/galleries/<%= x.gallery_id.to_s %>/<%= x.id %>'><img src= <%= x.file.thumb.url%> ></a>
+  <% end %>
+</div>

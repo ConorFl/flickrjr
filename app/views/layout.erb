@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- 
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+    See: http://necolas.github.com/normalize.css/
+  -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <!--
+    application.css is where you put your styles
+  -->
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+  <title>Flickr Jr.</title>
+</head>
+<body>
+  <div class="nav_bar">
+  <ul>
+  <li><a href='/'>Home</a></li></li>
+  <% if session[:current_user_id] %>
+    <li><a href='/user/<%= session[:current_user_id]%>/galleries'>My Galleries</a></li>
+    <li><a href='/gallery/new'>New Gallery</a></li>
+    <li><a href='/logout'>Logout</a></li>
+  <% else %>
+    <li><a href='/register'>Register</a></li><li> <a href='/login'>Login</a></li>
+  <% end %>  
+  </div>
+  <%= yield %>
+
+
+</body>
+</html>

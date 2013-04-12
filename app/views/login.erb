@@ -1,0 +1,8 @@
+<div class="container">
+  <%= @message if @message %>
+  <form name="registration" action='/login' method='post'>
+    <input type="text" name="email" placeholder="Email">
+    <input type="password" name="password" placeholder="Password">
+    <input type="submit" name="login" value="Let me in!">
+  </form>
+</div>
